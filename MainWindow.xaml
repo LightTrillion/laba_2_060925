@@ -9,16 +9,33 @@
     <Grid>
         <Menu Background="White" BorderBrush="Navy" BorderThickness="1" VerticalAlignment="Top">
             <MenuItem Header="_Окно">
-                <MenuItem Header="_Цвет">
-                    <MenuItem Header="Белый" Click="MenuItem_Click_white_bg"/>
-                    <MenuItem Header="Красный" Click="MenuItem_Click_red_bg"/>
-                    <MenuItem Header="Зеленый" Click="MenuItem_Click_green_bg"/>
+                <MenuItem Header="_Цвет" ToolTip="Поменять цвет">
+                    <MenuItem Header="Белый" Click="MenuItem_Click_white_bg" MouseEnter="MenuItem_MouseEnter_white_bg" MouseLeave="MenuItem_MouseLeave_white_bg"/>
+                    <MenuItem Header="Красный" Click="MenuItem_Click_red_bg" MouseEnter="MenuItem_MouseEnter_red_bg" MouseLeave="MenuItem_MouseLeave_red_bg"/>
+                    <MenuItem Header="Зеленый" Click="MenuItem_Click_green_bg" MouseEnter="MenuItem_MouseEnter_green_bg" MouseLeave="MenuItem_MouseLeave_green_bg"/>
                 </MenuItem>
-                <MenuItem Header="Разработчик" Click="MenuItem_Click_developers"/>
-                <Separator />
-                <MenuItem Header="_Закрыть" Click="MenuItem_Click_close"/>
+                <MenuItem Header="Разработчик" Click="MenuItem_Click_developers" ToolTip="О разработчике" MouseEnter="MenuItem_MouseEnter_developers" MouseLeave="MenuItem_MouseLeave_developers"/>
+                <Separator/>
+                <MenuItem Header="_Закрыть" Click="MenuItem_Click_close" ToolTip="Выход" MouseEnter="MenuItem_MouseEnter_close" MouseLeave="MenuItem_MouseLeave_close"/>
             </MenuItem>
-            <MenuItem Header="_О программе" />
         </Menu>
+        <ToolBar Margin="605,20,0,335">
+            <Button Width="48" Height="48" Click="Button_Click_1" ToolTip="Поменять цвет" MouseEnter="Button_MouseEnter_1" MouseLeave="Button_MouseLeave_1">
+                <Image Source="/icons8-brush-50.png"></Image>
+            </Button>
+            <Separator/>
+            <Button Width="48" Height="48" Click="Button_Click_2" ToolTip="О разработчике" MouseEnter="Button_MouseEnter_2" MouseLeave="Button_MouseLeave_2">
+                <Image Source="/icons8-help-50.png"></Image>
+            </Button>
+            <Separator/>
+            <Button Width="48" Height="48" Click="Button_Click_3" ToolTip="Выход" MouseEnter="Button_MouseEnter_3" MouseLeave="Button_MouseLeave_3">
+                <Image Source="/icons8-middle-finger-50.png"></Image>
+            </Button>
+        </ToolBar>
+        <DockPanel VerticalAlignment="Bottom">
+            <StatusBar DockPanel.Dock="Bottom">
+                <TextBlock x:Name="StatusText" Text=""/>
+            </StatusBar>
+        </DockPanel>
     </Grid>
 </Window>

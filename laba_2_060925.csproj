@@ -8,4 +8,16 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="icons8-brush-50.png" />
+    <None Remove="icons8-help-50.png" />
+    <None Remove="icons8-middle-finger-50.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="icons8-brush-50.png" />
+    <Resource Include="icons8-help-50.png" />
+    <Resource Include="icons8-middle-finger-50.png" />
+  </ItemGroup>
+
 </Project>
