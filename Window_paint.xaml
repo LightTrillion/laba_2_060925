@@ -1,0 +1,52 @@
+﻿<Window x:Class="laba_2_060925.Window_paint"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:laba_2_060925"
+        mc:Ignorable="d"
+        Title="Window_paint" Height="600" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Панель инструментов -->
+        <ToolBar Grid.Row="0" Margin="5">
+            <Button Content="Назад" Margin="5,0" Click="Button_Click_close"/>
+            
+            <!-- Выбор цвета -->
+            <Label Content="Цвет:" Margin="5,0"/>
+            <ComboBox x:Name="colorComboBox" Width="100" Margin="5,0"
+                     SelectionChanged="ColorComboBox_SelectionChanged">
+            </ComboBox>
+
+            <!-- Размер кисти -->
+            <Label Content="Размер:" Margin="10,0,5,0"/>
+            <Slider x:Name="brushSizeSlider" Width="100" Minimum="1" Maximum="50" 
+                   Value="5" TickFrequency="1" IsSnapToTickEnabled="True"
+                   ValueChanged="BrushSizeSlider_ValueChanged"/>
+
+            <TextBlock Text="{Binding Value, ElementName=brushSizeSlider}" 
+                      Width="30" Margin="5,0" TextAlignment="Center"/>
+
+            <!-- Режимы работы -->
+            <Separator Margin="10,0"/>
+            <Label Content="Режим:" Margin="5,0"/>
+
+            <RadioButton x:Name="drawRadioButton" Content="Рисование" Margin="5,0"
+                        GroupName="Mode" Checked="ModeRadioButton_Checked" IsChecked="True"/>
+
+            <RadioButton x:Name="editRadioButton" Content="Редактирование" Margin="5,0"
+                        GroupName="Mode" Checked="ModeRadioButton_Checked"/>
+
+            <RadioButton x:Name="deleteRadioButton" Content="Удаление" Margin="5,0"
+                        GroupName="Mode" Checked="ModeRadioButton_Checked"/>
+        </ToolBar>
+
+        <!-- Холст -->
+        <InkCanvas x:Name="drawingCanvas" Grid.Row="1" Margin="5"
+                  Background="White" DefaultDrawingAttributes="{Binding DrawingAttributes}"/>
+    </Grid>
+</Window>

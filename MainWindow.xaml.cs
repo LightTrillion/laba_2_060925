@@ -11,7 +11,9 @@ using System.Windows.Shapes;
 
 namespace laba_2_060925
 {
-
+    /// <summary>
+    /// Interaction logic for MainWindow.xaml
+    /// </summary>
     public partial class MainWindow : Window
     {
         public MainWindow()
@@ -19,9 +21,12 @@ namespace laba_2_060925
             InitializeComponent();
         }
 
+        private int currentColorIndex = 0;
+
         private void MenuItem_Click_close(object sender, RoutedEventArgs e)
         {
             Close();
+
         }
 
         private void MenuItem_Click_white_bg(object sender, RoutedEventArgs e)
@@ -151,8 +156,8 @@ namespace laba_2_060925
 
         private void MenuItem_Click_openW(object sender, RoutedEventArgs e)
         {
-            var Window_Ppaint = new Window_paint();
-            Window_Ppaint.Show();
+            var Ppaint_window = new Window_paint();
+            Ppaint_window.Show();
             this.Close();
         }
     }
