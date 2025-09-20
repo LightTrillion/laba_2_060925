@@ -9,14 +9,16 @@
     <Grid>
         <Menu Background="White" BorderBrush="Navy" BorderThickness="1" VerticalAlignment="Top">
             <MenuItem Header="_Окно">
-                <MenuItem Header="_Цвет">
-                    <MenuItem Header="Белый" Click="MenuItem_Click_white_bg"/>
-                    <MenuItem Header="Красный" Click="MenuItem_Click_red_bg"/>
-                    <MenuItem Header="Зеленый" Click="MenuItem_Click_green_bg"/>
+                <MenuItem Header="_Цвет" ToolTip="Поменять цвет">
+                    <MenuItem Header="Белый" Click="MenuItem_Click_white_bg" MouseEnter="MenuItem_MouseEnter_white_bg" MouseLeave="MenuItem_MouseLeave_white_bg"/>
+                    <MenuItem Header="Красный" Click="MenuItem_Click_red_bg" MouseEnter="MenuItem_MouseEnter_red_bg" MouseLeave="MenuItem_MouseLeave_red_bg"/>
+                    <MenuItem Header="Зеленый" Click="MenuItem_Click_green_bg" MouseEnter="MenuItem_MouseEnter_green_bg" MouseLeave="MenuItem_MouseLeave_green_bg"/>
                 </MenuItem>
-                <MenuItem Header="Разработчик" Click="MenuItem_Click_developers"/>
-                <Separator />
-                <MenuItem Header="_Закрыть" Click="MenuItem_Click_close"/>
+            <MenuItem Header="_Разработчик" Click="MenuItem_Click_developers" ToolTip="О разработчике" MouseEnter="MenuItem_MouseEnter_developers" MouseLeave="MenuItem_MouseLeave_developers"/>
+                <MenuItem Header="_Paint" Click="MenuItem_Click_openW"/>
+                <MenuItem Header="Разработчик" Click="MenuItem_Click_developers" ToolTip="О разработчике" MouseEnter="MenuItem_MouseEnter_developers" MouseLeave="MenuItem_MouseLeave_developers"/>
+                <Separator/>
+                <MenuItem Header="_Закрыть" Click="MenuItem_Click_close" ToolTip="Выход" MouseEnter="MenuItem_MouseEnter_close" MouseLeave="MenuItem_MouseLeave_close"/>
             </MenuItem>
             <MenuItem Header="_О программе" />
         </Menu>
